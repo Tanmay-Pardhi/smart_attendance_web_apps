@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Signup Teacher</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/material-icon/css/material-design-iconic-font.min.css') }}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <form method = "POST" class="appointment-form" id = "appointment-form">
+                <div class = "form-group-1">
+                    <div class ="mainHeading">
+                        <h1> Attendance Monitoring System </h1>
+                    </div>
+                    <div class ="wrap" >
+
+                        <h2>{{title}}</h2>
+                        <form action="/signup_teacher" method="post">
+                            <input type="text" name="user" placeholder="username" required="required">
+                            <input type="password" name="password" placeholder="password" required="required">
+                            <input type="text" name="email" placeholder="email" required="required">
+                            <input type="submit" class="submit" value="SignUp">
+                            <p>{{uname}} {{msg}}</p>
+                        </form>
+                        <form action="/changetask" method="post">
+                            <input type="submit" class="submit" name="chtask" value="Back">
+                        </form>
+                        <form action="/logout" method="post">
+                            <input type="submit" class="submit" name="logout" value="Logout">
+                        </form>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

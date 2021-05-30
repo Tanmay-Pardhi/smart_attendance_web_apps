@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Signup Student</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/material-icon/css/material-design-iconic-font.min.css') }}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <form method = "POST" class="appointment-form" id = "appointment-form">
+                <div class = "form-group-1">
+                    <div class ="mainHeading">
+                        <h1> Attendance Monitoring System </h1>
+                    </div>
+                    <div class ="wrap" >
+                        <form></form>
+
+                        <h2> File upload</h2>
+
+                        <form action = "/signup_student" method = "post">
+                            <input type="text" name="student_name" placeholder="Student Name" required="required">
+                            <input type="password" name="password" placeholder="password" required="required">
+                            <input type="text" name="student_email" placeholder="Student Email" required="required">
+                            <input type="text" name="parent_email" placeholder="Parent Email" required="required">
+                            <input type="text" name="roll_id" placeholder="Roll Number" required="required">
+                            <input type="submit" name="reg_student" class="submit" value="SignUp">
+                        </form>
+                        <p>{{uname}}{{msg}}</p>
+
+                        <form id="upload-form" action="{{url_for('upload')}}" method=post enctype="multipart/form-data">
+                            <input type="file" name="file" placeholder="username" required="required" accept=".jpg" capture="camera">
+                            <label> <font color="black">(only jpg files allowed)</font></label><br><br>
+                            <input type="text" name="class_folder" placeholder="Enter class here" required="required">
+                            <input type="text" name="id_folder" placeholder="Enter id" required="required">
+                            <input type="text" name = "name_student" placeholder="Enter your name" required="required">
+                            <input type="submit" value="Create training data" class="submit">
+                        </form>
+                        <p>{{msg1}}</p>
+                        <form action="/changetask" method="post">
+                            <input type="submit" class= "submit" name="chtask" value="Back">
+                        </form>
+                        <form action="/logout" method="post">
+                            <input type="submit" class="submit" name="logout" value="Logout">
+                        </form>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>
