@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student: View Attendance</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/material-icon/css/material-design-iconic-font.min.css') }}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <form method="POST" class="appointment-form" id="appointment-form">
+                <!-- <h2>education appointment form</h2> -->
+                <div class="form-group-1">
+                    <div class="mainHeading">
+                        <h1>Attendance Monitoring System</h1>
+                    </div>
+                    <div class="wrap">
+                        <h2>View Report</h2>
+                        <form></form>
+                        <form method="post">
+                            <h3 align = "center">Check Attendance</h3>
+                   <!-- <input type="text" name = "Fac_id" placeholder = "Enter your Faculty-id here" required = "required">
+                   <input type="date" name="fname" required="required"> -->
+                        <!-- <input type="time" style="width: 200px;float: right;" name="ftime" value="10:10" required="required">
+                        <br><br> -->
+                            <input type="text" name="subject_name" placeholder="Enter the subject here" required="required">
+                            <br>
+                            <input type="submit" class="submit" formaction="/view_student" value="View Attendance" formtarget="_blank">
+                        </form>
+                        <p style="font-weight: normal;font-size: 10px;">{{msg}}</p>
+                        <!--
+                        <form action="/calculate" method="post" target="_blank">
+                            <h3 align="center">Check overall result</h3>
+                            <input type="text" name="final_class" placeholder="Enter class here" required="required">
+                            <input type="submit" class="submit" value="Calculate">
+                        </form>
+                        <p style="font-weight: normal;font-size: 10px">{{msg1}}</p> -->
+                        <form action="/changetaskstudent" method="post">
+                            <input type="submit" class="submit" name="chtask" value="Back">
+                        </form>
+                        <form action="/logout_student" method="post">
+                            <input type="submit" class="submit" name="logout" value="Logout">
+                        </form>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
