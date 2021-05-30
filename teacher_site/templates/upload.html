@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Take Attendance</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/material-icon/css/material-design-iconic-font.min.css') }}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <form method="POST" class="appointment-form" id="appointment-form">
+                <!-- <h2>education appointment form</h2> -->
+                <div class="form-group-1">
+
+                    <div class="mainHeading">
+                        <h1>Attendance Monitoring System</h1>
+                    </div>
+
+                    <div class="wrap">
+                        <h2>Start Marking Attendance </h2>
+                        <form></form>
+
+                        <form id="upload-form" action="{{url_for('upload')}}" method=post enctype="multipart/form-data"><br>
+                            <input type="text" name="faculty_id" placeholder="Enter Faculty-id here" required="required">
+
+                            <label>Enter Subject here: </label>
+                            <select id="selectsubject" name="select_subject">
+                                <option value="dcom">Digital Communication</option>
+                                <option value="cse">CSE</option>
+                                <option value="dsp">Digital Signal Processing</option>
+                                <option value="tss">Telecommunication Switching System</option>
+                                <option value="fe">Functional English</option>
+                                <option value="ews">Electronics Workshop</option>
+                            </select>
+
+                                <!-- <input type="text" name="subject" placeholder="Enter Subject here" required="required"> -->
+
+                            <input type="submit" class="submit" value="Mark Attendance">
+
+                        </form>
+                        <form action="/changetask" method="post">
+                            <input type="submit" class="submit" value="Back">
+                        </form>
+                        <p style="color: red">{{msg}}</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

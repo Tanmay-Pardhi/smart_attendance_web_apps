@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename='fonts/material-icon/css/material-design-iconic-font.min.css') }} "> -->
+
+    <!-- Main css -->
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename='css/style.css') }}"> -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/icomoon/style.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/owl.carousel.min.css') }}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+
+    <title>Check Attendance</title>
+  </head>
+  <body>
+
+
+  <div class="content">
+
+    <div class="container">
+      <h2 class="mb-5">Attendance Electronics 3rd Year</h2>
+
+
+      <div class="table-responsive custom-table-responsive">
+
+        <table class="table custom-table">
+          <thead>
+            <tr>
+
+              <th scope="col">
+                <label class="control control--checkbox">
+                  <input type="checkbox"  class="js-check-all"/>
+                  <div class="control__indicator"></div>
+                </label>
+              </th>
+
+              <th scope="col">date_of_attendance</th>
+              <th scope="col">Fac_id</th>
+              <th scope="col">Subject</th>
+              <th scope="col">Name</th>
+              <th scope="col">roll_id</th>
+              <th scope="col">Time_of_Attendance</th>
+              <th scope="col">Percentage Attendance</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for value in reviews %}
+            <tr scope="row">
+              <th scope="row">                                  <!-- repeat start -->
+                <label class="control control--checkbox">
+                  <input type="checkbox"/>
+                  <div class="control__indicator"></div>
+                </label>
+              </th>
+              <td>
+                {{ value['date_of_attendance'] }}
+              </td>
+              <td>{{ value['Fac_id'] }}</td>
+              <td>
+                {{ value['Subject'] }}
+              </td>
+              <td>{{ value['Name'] }}</td>
+              <td>{{ value['roll_id'] }}</td>
+              <td>{{ value['Time_of_Attendance'] }}</td>
+              <td>{{ value['Percentage'] }}</td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+            {% endfor %}<!-- repeat end -->
+          </tbody>
+        </table>
+      </div>
+
+
+  </div>
+
+</div>
+
+              <!--
+              <th scope="row">
+                <label class="control control--checkbox">
+                  <input type="checkbox"/>
+                  <div class="control__indicator"></div>
+                </label>
+              </th>
+
+              <td>4616</td>
+              <td><a href="#">Matthew Wasil</a></td>
+              <td>
+                Graphic Designer
+                <small class="d-block">Far far away, behind the word mountains</small>
+              </td>
+              <td>+02 020 3994 929</td>
+              <td>London College</td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+            <tr>
+              <th scope="row">
+                <label class="control control--checkbox">
+                  <input type="checkbox"/>
+                  <div class="control__indicator"></div>
+                </label>
+              </th>
+
+              <td>9841</td>
+              <td><a href="#">Sampson Murphy</a></td>
+              <td>
+                Mobile Dev
+                <small class="d-block">Far far away, behind the word mountains</small>
+              </td>
+              <td>+01 352 1125 0192</td>
+              <td>Senior High</td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+            <tr>
+              <th scope="row">
+                <label class="control control--checkbox">
+                  <input type="checkbox"/>
+                  <div class="control__indicator"></div>
+                </label>
+              </th>
+
+              <td>9548</td>
+              <td><a href="#">Gaspar Semenov</a></td>
+              <td>
+                Illustrator
+                <small class="d-block">Far far away, behind the word mountains</small>
+              </td>
+              <td>+92 020 3994 929</td>
+              <td>College</td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+            <tr>
+              <th scope="row">
+                <label class="control control--checkbox">
+                  <input type="checkbox"/>
+                  <div class="control__indicator"></div>
+                </label>
+              </th>
+
+              <td>4616</td>
+              <td><a href="#">Matthew Wasil</a></td>
+              <td>
+                Graphic Designer
+                <small class="d-block">Far far away, behind the word mountains</small>
+              </td>
+              <td>+02 020 3994 929</td>
+              <td>London College</td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+            <tr>
+              <th scope="row">
+                <label class="control control--checkbox">
+                  <input type="checkbox"/>
+                  <div class="control__indicator"></div>
+                </label>
+              </th>
+
+              <td>9841</td>
+              <td><a href="#">Sampson Murphy</a></td>
+              <td>
+                Mobile Dev
+                <small class="d-block">Far far away, behind the word mountains</small>
+              </td>
+              <td>+01 352 1125 0192</td>
+              <td>Senior High</td>
+            </tr>
+            <tr class="spacer"><td colspan="100"></td></tr>
+            <tr>
+              <th scope="row">
+                <label class="control control--checkbox">
+                  <input type="checkbox"/>
+                  <div class="control__indicator"></div>
+                </label>
+              </th>
+
+              <td>9548</td>
+              <td><a href="#">Gaspar Semenov</a></td>
+              <td>
+                Illustrator
+                <small class="d-block">Far far away, behind the word mountains</small>
+              </td>
+              <td>+92 020 3994 929</td>
+              <td>College</td>
+            </tr>
+            -->
+
+
+
+
+
+    <script src="../static/js/jquery-3.3.1.min.js"></script>
+    <script src="../static/js/popper.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/main.js"></script>
+  </body>
+</html>
